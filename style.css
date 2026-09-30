@@ -1,0 +1,203 @@
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #fafafa;
+    color: #222;
+    margin: 0;
+    padding: 30px;
+    
+   
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: start;
+}
+
+
+h1 {
+    grid-column: 1 / -1;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 15px;
+}
+
+
+.news {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Карточка новости */
+.news-card {
+    background: #ffffff;
+    padding: 16px;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: all 0.2s ease; 
+}
+
+
+.news-card:hover {
+    border-color: #0366d6;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+
+.news-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+
+.news-card h3 {
+    font-size: 16px;
+    color: #111;
+    margin: 0 0 6px 0;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+.news-date {
+    font-size: 11px;
+    color: #586069;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.news-card p {
+    font-size: 13px;
+    color: #586069;
+    margin: 0 0 16px 0;
+    line-height: 1.45;
+    flex-grow: 1;
+}
+
+
+.news-btn {
+    display: inline-block;
+    background-color: #f1f8ff;
+    color: #0366d6;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid #c8e1ff;
+    transition: background-color 0.15s, border-color 0.15s;
+    align-self: flex-start;
+}
+
+.news-btn:hover {
+    background-color: #0366d6;
+    color: #fff;
+    border-color: #0366d6;
+}
+
+
+.news-card:first-child {
+    grid-column: 1 / -1; 
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+    align-items: center;
+    background-color: #f6f8fa;
+    border: 1px solid #d1d5db;
+}
+
+.news-card:first-child img {
+    height: 100%;
+    min-height: 220px;
+    margin-bottom: 0;
+}
+
+/* Правая боковая панель «Популярное» (Задание 2) */
+.sidebar {
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar h3 {
+    font-size: 15px;
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 8px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.sidebar li:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .news {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .news {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card:first-child {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news-card:first-child img {
+        height: 170px;
+    }
+}
